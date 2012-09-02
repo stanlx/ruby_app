@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>From user:</b>
+  <%= @email.from_user_id %>
+</p>
+
+<p>
+  <b>From name:</b>
+  <%= @email.from_name %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%= @email.subject %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @email.content %>
+</p>
+
+<p>
+  <b>Time sent:</b>
+  <%= @email.time_sent %>
+</p>
+
+<p>
+  <b>Ps:</b>
+  <%= @email.ps_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_email_path(@email) %> |
+<%= link_to 'Back', emails_path %>
