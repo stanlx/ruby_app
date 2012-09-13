@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  from_user_id: 1
+  from_name: MyString
+  subject: MyString
+  content: MyText
+  time_sent: 2012-09-01 19:31:59
+  ps_id: MyString
+
+two:
+  from_user_id: 1
+  from_name: MyString
+  subject: MyString
+  content: MyText
+  time_sent: 2012-09-01 19:31:59
+  ps_id: MyString

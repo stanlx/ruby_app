@@ -1,0 +1,29 @@
+<h1>Listing blas</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Sender id,</th>
+    <th>Subject,</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @blas.each do |bla| %>
+  <tr>
+    <td><%= bla.id %></td>
+    <td><%= bla.sender_id, %></td>
+    <td><%= bla.subject, %></td>
+    <td><%= bla.content %></td>
+    <td><%= link_to 'Show', bla %></td>
+    <td><%= link_to 'Edit', edit_bla_path(bla) %></td>
+    <td><%= link_to 'Destroy', bla, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bla', new_bla_path %>

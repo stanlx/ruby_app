@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @bla.id %>
+</p>
+
+<p>
+  <b>Sender id,:</b>
+  <%= @bla.sender_id, %>
+</p>
+
+<p>
+  <b>Subject,:</b>
+  <%= @bla.subject, %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @bla.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_bla_path(@bla) %> |
+<%= link_to 'Back', blas_path %>

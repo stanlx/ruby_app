@@ -1,0 +1,31 @@
+<div id = "product_list">
+	<h1>Listing emails_</h1>
+
+	<table>
+	<% @emails.each do |email| %>
+	  <tr class = "<%= cycle('list_line_odd', 'list_line_even') %>">
+	    <td><%= email.from_name %></td>
+	    <td class = "list_description">
+	      <dl>
+		<dt><%= email.subject %></dt>
+		<dd><%= truncate(strip_tags(email.content), :length =>80) %></dd>
+	      </dl>
+	    </td>
+	    <td><%= email.time_sent %></td>
+	    <td><%= email.ps_id %></td>
+	    <td class = "list_actions">
+	      <%= link_to 'Show', email %></br>
+	      <%= link_to 'Edit', edit_email_path(email) %></br>
+	      <%= link_to 'Destroy', email, 
+				:method => :delete, 
+				:data => { :confirm => 'Are you sure?' } %>
+	    </td>
+	  </tr>
+	<% end %>
+	</table>
+</div>
+
+<br />
+
+<%= link_to 'New Email', new_email_path %>
+
