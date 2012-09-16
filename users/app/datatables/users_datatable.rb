@@ -21,9 +21,12 @@ private
       [
         #link_to(user.first_name, user),
         h(user.first_name),
-        h(user.gender),
-        # h(user.application_submit_date.strftime("%B %e, %Y"))
-        h(user.application_submit_date)   
+        h(user.id),
+        if user.application_submit_date.nil?
+          h("")
+        else
+          h(user.application_submit_date.strftime("%B %e, %Y %l:%M:%S %P"))
+        end
       ]
     end
   end
