@@ -23,8 +23,8 @@ private
         #link_to(user.first_name, user),
         #h(user.first_name),
         h(user.id),
-        @personas = Persona.find_by_user_id(user.id)
-        h(@persona.id),
+        #@personas = Persona.find_by_user_id(user.id)
+        h(Persona.find_by_user_id(user.id).id),
         #@user.personas.map do |persona|
         #  [
         #    h(persona.id),
@@ -45,12 +45,12 @@ private
   end
 
   def fetch_users
-    @users = User.joins(:personas).order("#{sort_column} #{sort_direction}")
-    @users = users.page(page).per_page(per_page)
+    users = User.order("#{sort_column} #{sort_direction}")
+    users = users.page(page).per_page(per_page)
     if params[:sSearch].present?
-      @users  = users.where("first_name like :search or gender like :search", search: "%#{params[:sSearch]}%")
+      users  = users.where("first_name like :search or gender like :search", search: "%#{params[:sSearch]}%")
     end
-    @users
+    users
   end
 
   def page
